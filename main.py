@@ -1,4 +1,3 @@
-from mangum import Mangum
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware  # Import the CORSMiddleware
@@ -55,4 +54,3 @@ async def remove_image_bg(image: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 # Wrap the existing code with the Mangum handler
-handler = Mangum(app)
